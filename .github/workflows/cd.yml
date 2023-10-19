@@ -1,0 +1,41 @@
+name: Continuous Deployment for my webapp
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Deploy application
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_IP }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            # Deployment to a staging environment
+            cd /home/ubuntu/
+            sudo rm -rf mywebapp
+            sudo git clone https://github.com/shreshkhatri/mywebapp.git
+            cd /home/ubuntu/mywebapp
+            sudo fuser -k 80/tcp
+            sudo npm install
+            sudo npm run build
+            sudo npm run start &
+      - name: Notify Success
+        if: success()
+        run: |
+          # Send a notification that deployment was successful
+          echo "Deployment to production was successful."
+
+      - name: Notify Failure
+        if: failure()
+        run: |
+          # Send a notification that deployment failed
+          echo "Deployment to production failed."
