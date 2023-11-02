@@ -81,7 +81,10 @@ export default function Experiencecs() {
           </ListItem>
           <List sx={{ '--List-gap': '0px' }}>
             <ListItem >
-              <ListItemButton sx={{display: 'inline-block'}}><ItemWorkExperience designation='Lecturer @ London South Bank University' dates='February, 2022 - Present' duties=''/></ListItemButton>
+              <ListItemButton sx={{display: 'inline-block'}}><ItemWorkExperience designation='Lecturer @ London South Bank University' dates='February, 2022 - Present' duties='    Curriculum Design and Preparation
+    Delivery of Engaging and Informative Tutorials, 
+    Evaluation and Feedback, 
+    Support and Guidance'/></ListItemButton>
             </ListItem>
           </List>
         </ListItem>
@@ -91,7 +94,10 @@ export default function Experiencecs() {
           </ListItem>
           <List sx={{ '--List-gap': '0px' }}>
             <ListItem >
-            <ListItemButton sx={{display: 'inline-block'}}><ItemWorkExperience designation='Full Stack Developer @ London South Bank University' dates='June, 2021 - Present' duties=''/></ListItemButton>
+            <ListItemButton sx={{display: 'inline-block'}}><ItemWorkExperience designation='Full Stack Developer @ London South Bank University' dates='June, 2021 - Present' duties='    Full-Stack Development: Engaging in end-to-end development of web applications, handling both front-end and back-end aspects of the software.
+    Technology Implementation: Implementing various technologies, frameworks, and languages to create scalable and robust applications.
+    Problem-Solving and Troubleshooting: Identifying issues, debugging code, and devising effective solutions to technical challenges that arise during development.
+    Collaboration and Teamwork: Working collaboratively within teams to brainstorm, share ideas, and contribute to the development process, ensuring a cohesive and efficient workflow.'/></ListItemButton>
             </ListItem>
           </List>
         </ListItem>

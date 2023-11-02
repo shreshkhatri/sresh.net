@@ -12,8 +12,9 @@ export default function ItemWorkExperience({designation,dates,duties}:ItemWorkEx
   return (
     <Card variant='plain' sx={{cursor:'text'}}>
       <div>
+      <Typography level="body-sm">{dates}</Typography>
         <Typography level="title-lg">{designation}</Typography>
-        <Typography level="body-sm">{dates}</Typography>
+        <Typography fontWeight='bold'>Jobs / Duties</Typography>
         <Typography>{duties}</Typography>
       </div>
       
