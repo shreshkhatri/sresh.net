@@ -1,19 +1,20 @@
 'use client';
 import { useState, Fragment, FC } from 'react';
+import Link from 'next/link'
 import Box from '@mui/joy/Box';
 import IconButton from '@mui/joy/IconButton';
 import Drawer from '@mui/joy/Drawer';
-import Input from '@mui/joy/Input';
 import List from '@mui/joy/List';
 import ListItemButton from '@mui/joy/ListItemButton';
-import Typography from '@mui/joy/Typography';
 import ModalClose from '@mui/joy/ModalClose';
 import Menu from '@mui/icons-material/Menu';
-import Search from '@mui/icons-material/Search';
 import { MobileFriendlyDrawerProps } from '@/types/typeMobileFriendlyDrawerProps ';
 import { Grid } from '@mui/joy';
+import { PATH_TO_ROOT } from '@/assets/data';
+
 
 export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFriendlyDrawerProps) {
+
 
   return (
     <Grid sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }}>
@@ -46,7 +47,7 @@ export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFri
         >
           {
             menus.map((menu, index) => {
-              return (<ListItemButton key={index}>{menu}</ListItemButton>)
+              return (<Link  href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase())?'/':`/${menu.toLocaleLowerCase()}`}><ListItemButton key={index}>{menu}</ListItemButton></Link>)
             })
           }
         </List>

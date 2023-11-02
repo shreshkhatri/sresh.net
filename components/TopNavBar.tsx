@@ -3,10 +3,9 @@ import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
-import ListItemDecorator from '@mui/joy/ListItemDecorator';
-import HomeRounded from '@mui/icons-material/HomeRounded';
+import Link from 'next/link'
 import { TopNavBarProps } from '@/types/typeTopNavBar';
-
+import { PATH_TO_ROOT } from '@/assets/data';
 
 type Options = {
     initialActiveIndex: null | number;
@@ -105,17 +104,17 @@ export default function TopNavBar({ menus }: TopNavBarProps) {
                 {menus.map((menu, index) => {
                     return (
                         <ListItem key={index} role="none">
-                            <ListItemButton
-                                role="menuitem"
-                                {...getTargetProps(index)}
-                                component="a"
-                                href="#navigation-menu"
-                                sx={{fontWeight:'bold'}}
-                            >
-                                {menu}
-                            </ListItemButton>
+                            <Link href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase())?'/':`/${menu.toLocaleLowerCase()}`}>
+                                <ListItemButton
+                                    role="menuitem"
+                                    {...getTargetProps(index)}
+                                    sx={{ fontWeight: 'bold' }}
+                                >
+                                    {menu}
+                                </ListItemButton>
+                            </Link>
                         </ListItem>
-                        )
+                    )
                 })}
             </List>
         </Box>
