@@ -110,6 +110,7 @@ export default function TopNavBar({ menus }: TopNavBarProps) {
                                 {...getTargetProps(index)}
                                 component="a"
                                 href="#navigation-menu"
+                                sx={{fontWeight:'bold'}}
                             >
                                 {menu}
                             </ListItemButton>
