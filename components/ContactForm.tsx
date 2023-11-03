@@ -124,8 +124,8 @@ export default function ContactForm() {
 
 
                         <FormControl>
-                            <FormLabel>Role</FormLabel>
-                            <Input size="sm" defaultValue="UI Developer" />
+                            <FormLabel>Your Name</FormLabel>
+                            <Input size="sm"  />
                         </FormControl>
                         <FormControl sx={{ flexGrow: 1 }}>
                             <FormLabel>Email</FormLabel>
@@ -134,7 +134,7 @@ export default function ContactForm() {
                                 type="email"
                                 startDecorator={<EmailRoundedIcon />}
                                 placeholder="email"
-                                defaultValue="siriwatk@test.com"
+                        
                                 sx={{ flexGrow: 1 }}
                             />
                         </FormControl>
@@ -142,29 +142,7 @@ export default function ContactForm() {
                         <div>
                             <CountrySelector />
                         </div>
-                        <div>
-                            <FormControl sx={{ display: { sm: 'contents' } }}>
-                                <FormLabel>Timezone</FormLabel>
-                                <Select
-                                    size="sm"
-                                    startDecorator={<AccessTimeFilledRoundedIcon />}
-                                    defaultValue="1"
-                                >
-                                    <Option value="1">
-                                        Indochina Time (Bangkok){' '}
-                                        <Typography textColor="text.tertiary" ml={0.5}>
-                                            — GMT+07:00
-                                        </Typography>
-                                    </Option>
-                                    <Option value="2">
-                                        Indochina Time (Ho Chi Minh City){' '}
-                                        <Typography textColor="text.tertiary" ml={0.5}>
-                                            — GMT+07:00
-                                        </Typography>
-                                    </Option>
-                                </Select>
-                            </FormControl>
-                        </div>
+                      
                     </Stack>
                     <CardOverflow sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
                         <CardActions sx={{ alignSelf: 'flex-end', pt: 2 }}>
