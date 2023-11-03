@@ -21,7 +21,7 @@ jobs:
           script: |
             # Deployment to a staging environment
             cd /home/ubuntu/
-            sudo rm -rf mywebapp
+            sudo rm -rf sresh.net
             sudo git clone https://github.com/shreshkhatri/sresh.net.git
             cd /home/ubuntu/sresh.net
             sudo fuser -k 80/tcp
