@@ -4,13 +4,14 @@ import CardCover from '@mui/joy/CardCover';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
+import Image from 'next/image';
 
 export default function Jumbotorn() {
   return (
     <Card sx={{ minHeight: '500px', width: '100%',border:0,
     borderRadius:0,}}>
       <CardCover>
-        <img
+        <Image
           src="/images/suresh.jpeg"
           loading="lazy"
           alt=""
