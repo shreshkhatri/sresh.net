@@ -1,7 +1,7 @@
 'use client';
-import Experiencecs from '@/components/Experiencecs';
-import Introduction from '@/components/Introduction';
-import Jumbotorn from '@/components/Jumbotorn';
+import Experiencecs from '@/app/components/Experiencecs';
+import Introduction from '@/app/components/Introduction';
+import Jumbotorn from '@/app/components/Jumbotorn';
 
 import { Typography } from '@mui/joy';
 

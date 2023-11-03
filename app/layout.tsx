@@ -3,8 +3,8 @@
 import './globals.css';
 import { useState } from 'react';
 import { Inter } from 'next/font/google'
-import MobileFriendlyDrawer from '@/components/MobileFriendlyDrawerMobileFriendlyDrawer';
-import TopNavBar from '@/components/TopNavBar';
+import MobileFriendlyDrawer from '@/app/components/MobileFriendlyDrawerMobileFriendlyDrawer';
+import TopNavBar from '@/app/components/TopNavBar';
 const inter = Inter({ subsets: ['latin'] })
 
 

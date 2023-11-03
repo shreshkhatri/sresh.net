@@ -12,9 +12,10 @@ export default function Jumbotorn() {
     borderRadius:0,}}>
       <CardCover>
         <Image
+          fill={true}
           src="/images/suresh.jpeg"
           loading="lazy"
-          alt=""
+          alt="Suresh's picture from graduation"
         />
       </CardCover>
       <CardCover

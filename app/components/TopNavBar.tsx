@@ -4,8 +4,8 @@ import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 import Link from 'next/link'
-import { TopNavBarProps } from '@/types/typeTopNavBar';
-import { PATH_TO_ROOT } from '@/assets/data';
+import { TopNavBarProps } from '@/app/types/typeTopNavBar';
+import { PATH_TO_ROOT } from '@/app/assets/data';
 
 type Options = {
     initialActiveIndex: null | number;
