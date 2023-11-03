@@ -22,7 +22,7 @@ jobs:
             # Deployment to a staging environment
             cd /home/ubuntu/
             sudo rm -rf mywebapp
-            sudo git clone https://github.com/shreshkhatri/mywebapp.git
+            sudo git clone https://github.com/shreshkhatri/sresh.net.git
             cd /home/ubuntu/mywebapp
             sudo fuser -k 80/tcp
             sudo npm install
