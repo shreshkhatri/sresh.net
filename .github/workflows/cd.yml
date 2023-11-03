@@ -24,9 +24,15 @@ jobs:
             sudo rm -rf sresh.net
             sudo git clone https://github.com/shreshkhatri/sresh.net.git
             cd /home/ubuntu/sresh.net
-            sudo fuser -k 80/tcp
+            
+            if sudo docker inspect my_web_app &> /dev/null; then
+              sudo docker stop my_web_app
+              echo "Docker container stopped."
+            else
+              echo "Container 'my_web_app' does not exist or is not running."
+            fi
             sudo docker build -t nextjs-docker .
-            sudo docker -d run -p 80:80 nextjs-docker
+            sudo docker -d run -p 80:80 --name my_web_app nextjs-docker
       - name: Notify Success
         if: success()
         run: |
