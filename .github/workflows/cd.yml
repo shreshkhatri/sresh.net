@@ -23,7 +23,7 @@ jobs:
             cd /home/ubuntu/
             sudo rm -rf mywebapp
             sudo git clone https://github.com/shreshkhatri/sresh.net.git
-            cd /home/ubuntu/mywebapp
+            cd /home/ubuntu/sresh.net
             sudo fuser -k 80/tcp
             docker build -t nextjs-docker .
             docker -d run -p 80:80 nextjs-docker
