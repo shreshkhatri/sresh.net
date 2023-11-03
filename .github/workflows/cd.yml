@@ -25,9 +25,8 @@ jobs:
             sudo git clone https://github.com/shreshkhatri/sresh.net.git
             cd /home/ubuntu/mywebapp
             sudo fuser -k 80/tcp
-            sudo npm install
-            sudo npm run build
-            sudo npm run start &
+            docker build -t nextjs-docker .
+            docker -d run -p 80:80 nextjs-docker
       - name: Notify Success
         if: success()
         run: |
