@@ -5,10 +5,8 @@ import React from 'react';
 import { Inter } from 'next/font/google'
 import MobileFriendlyDrawer from '@/components/MobileFriendlyDrawerMobileFriendlyDrawer';
 import TopNavBar from '@/components/TopNavBar';
-const inter = Inter({ subsets: ['latin'] })
-import { CssVarsProvider } from '@mui/joy/styles';
-import { CssBaseline } from '@mui/joy';
 import { getInitColorSchemeScript } from '@mui/joy/styles';
+import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
 
 
 export default function RootLayout({
@@ -20,15 +18,16 @@ export default function RootLayout({
   const menus = ['Home', 'About', 'Contact'];
 
   return (
-    <CssVarsProvider >
-      <CssBaseline  />
-      <html lang="en">
-        <body className={inter.className}>  {getInitColorSchemeScript()}
+
+    <html lang="en">
+      <body>
+        <ThemeRegistry>
+          {getInitColorSchemeScript()}
           <MobileFriendlyDrawer open={open} setOpen={setOpen} menus={menus} />
           <TopNavBar menus={menus} />
           {children}
-        </body>
-      </html>
-    </CssVarsProvider>
+        </ThemeRegistry>
+      </body>
+    </html>
   )
 }
