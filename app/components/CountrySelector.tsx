@@ -1,3 +1,4 @@
+'use client';
 import * as React from 'react';
 import Autocomplete from '@mui/joy/Autocomplete';
 import AutocompleteOption from '@mui/joy/AutocompleteOption';
@@ -7,7 +8,8 @@ import FormLabel from '@mui/joy/FormLabel';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import Typography from '@mui/joy/Typography';
 import Image from 'next/image';
-export default function CountrySelector({ sx, ...props }: FormControlProps) {
+import { CountryType, CountrySelectorProps } from '../types/types';
+export default function CountrySelector({ sx,country,setCountry , ...props }: FormControlProps & CountrySelectorProps) {
   return (
     <FormControl
       {...props}
@@ -18,17 +20,14 @@ export default function CountrySelector({ sx, ...props }: FormControlProps) {
         size="sm"
         autoHighlight
         isOptionEqualToValue={(option, value) => option.code === value.code}
+        value={country}
+        onChange={(e,newCountry)=>setCountry(newCountry)}
         options={countries}
         renderOption={(optionProps, option) => (
           <AutocompleteOption {...optionProps}>
             <ListItemDecorator>
               <AspectRatio ratio="1" sx={{ minWidth: 20, borderRadius: '50%' }}>
-                <Image
-                  loading="lazy"
-                  width="20"
-                  src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                  alt=""
-                />
+             
               </AspectRatio>
             </ListItemDecorator>
             {option.label}
@@ -47,12 +46,7 @@ export default function CountrySelector({ sx, ...props }: FormControlProps) {
   );
 }
 
-interface CountryType {
-  code: string;
-  label: string;
-  phone: string;
-  suggested?: boolean;
-}
+
 
 // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 const countries: readonly CountryType[] = [

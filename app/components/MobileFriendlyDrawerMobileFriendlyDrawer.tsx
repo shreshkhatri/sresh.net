@@ -8,10 +8,10 @@ import List from '@mui/joy/List';
 import ListItemButton from '@mui/joy/ListItemButton';
 import ModalClose from '@mui/joy/ModalClose';
 import Menu from '@mui/icons-material/Menu';
-import { MobileFriendlyDrawerProps } from '@/app/types/typeMobileFriendlyDrawerProps';
+import { MobileFriendlyDrawerProps } from '../types/types';
 import { Grid } from '@mui/joy';
 import { PATH_TO_ROOT } from '@/app/assets/data';
-
+import ModeToggler from './ModeToggler';
 
 export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFriendlyDrawerProps) {
 
@@ -32,7 +32,7 @@ export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFri
             mr: 2,
           }}
         >
-
+          <ModeToggler />
           <ModalClose id="close-icon" sx={{ position: 'initial' }} />
         </Box>
 
@@ -47,9 +47,10 @@ export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFri
         >
           {
             menus.map((menu, index) => {
-              return (<Link key={index} href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase())?'/':`/${menu.toLocaleLowerCase()}`}><ListItemButton >{menu}</ListItemButton></Link>)
+              return (<Link key={index} href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase()) ? '/' : `/${menu.toLocaleLowerCase()}`}><ListItemButton >{menu}</ListItemButton></Link>)
             })
           }
+
         </List>
       </Drawer>
     </Grid>

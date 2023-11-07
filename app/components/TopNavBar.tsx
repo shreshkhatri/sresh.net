@@ -1,11 +1,13 @@
-import * as React from 'react';
+'use client'
+import  React from 'react';
 import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 import Link from 'next/link'
-import { TopNavBarProps } from '@/app/types/typeTopNavBar';
+import { TopNavBarProps } from '../types/types';
 import { PATH_TO_ROOT } from '@/app/assets/data';
+import ModeToggler from './ModeToggler';
 
 type Options = {
     initialActiveIndex: null | number;
@@ -83,6 +85,8 @@ const useRovingIndex = (options?: Options) => {
 export default function TopNavBar({ menus }: TopNavBarProps) {
     const { targets, getTargetProps, setActiveIndex, focusNext, focusPrevious } =
         useRovingIndex();
+
+    
     return (
 
         <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, minHeight: 20, width: '100vw' }}>
@@ -116,6 +120,7 @@ export default function TopNavBar({ menus }: TopNavBarProps) {
                         </ListItem>
                     )
                 })}
+                <ListItem><ModeToggler /></ListItem>
             </List>
         </Box>
     );

@@ -35,10 +35,11 @@ export default function ProfileCard() {
                 <Stack
                     direction="row"
                     spacing={3}
-                    sx={{ display: { xs: 'none', md: 'flex' }, my: 1 }}
+                    sx={{ display: { md: 'flex' }, my: 1 }}
                 >
                     <SocialIcon url="https://www.linkedin.com/in/shreshkc" target='_blank' />
                     <SocialIcon url="https://www.facebook.com/shresh.kc" target='_blank' />
+                    <SocialIcon url="https://github.com/shreshkhatri" target='_blank' />
                 </Stack>
 
             </CardContent>
