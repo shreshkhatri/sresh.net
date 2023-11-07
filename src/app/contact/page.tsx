@@ -1,5 +1,5 @@
 'use client';
-import ContactForm from '@/app/components/ContactForm';
+import ContactForm from '@/components/ContactForm';
 import { Box, Typography } from '@mui/joy';
 import { useState } from 'react';
 

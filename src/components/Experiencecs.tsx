@@ -1,12 +1,9 @@
 import * as React from 'react';
-import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import ListItemButton, { listItemButtonClasses } from '@mui/joy/ListItemButton';
-import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import CardOverflow from '@mui/joy/CardOverflow';

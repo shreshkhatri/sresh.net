@@ -3,8 +3,8 @@
 import './globals.css';
 import React from 'react';
 import { Inter } from 'next/font/google'
-import MobileFriendlyDrawer from '@/app/components/MobileFriendlyDrawerMobileFriendlyDrawer';
-import TopNavBar from '@/app/components/TopNavBar';
+import MobileFriendlyDrawer from '@/components/MobileFriendlyDrawerMobileFriendlyDrawer';
+import TopNavBar from '@/components/TopNavBar';
 const inter = Inter({ subsets: ['latin'] })
 import { CssVarsProvider } from '@mui/joy/styles';
 import { CssBaseline } from '@mui/joy';

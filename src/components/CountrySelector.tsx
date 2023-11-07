@@ -7,8 +7,7 @@ import FormControl, { FormControlProps } from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import Typography from '@mui/joy/Typography';
-import Image from 'next/image';
-import { CountryType, CountrySelectorProps } from '../types/types';
+import { CountryType, CountrySelectorProps } from '@/app/types/types';
 export default function CountrySelector({ sx,country,setCountry , ...props }: FormControlProps & CountrySelectorProps) {
   return (
     <FormControl

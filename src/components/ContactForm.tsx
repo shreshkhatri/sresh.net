@@ -17,7 +17,7 @@ import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 
 import CountrySelector from './CountrySelector';
 import ProfileCard from './ProfileCard';
-import { CountryType } from '../types/types';
+import { CountryType } from '../app/types/types';
 
 
 export default function ContactForm() {
