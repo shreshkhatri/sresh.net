@@ -8,6 +8,7 @@ import TopNavBar from '@/app/components/TopNavBar';
 const inter = Inter({ subsets: ['latin'] })
 import { CssVarsProvider } from '@mui/joy/styles';
 import { CssBaseline } from '@mui/joy';
+import { getInitColorSchemeScript } from '@mui/joy/styles';
 
 
 export default function RootLayout({
@@ -20,9 +21,9 @@ export default function RootLayout({
 
   return (
     <CssVarsProvider >
-      <CssBaseline />
+      <CssBaseline  />
       <html lang="en">
-        <body className={inter.className}>
+        <body className={inter.className}>  {getInitColorSchemeScript()}
           <MobileFriendlyDrawer open={open} setOpen={setOpen} menus={menus} />
           <TopNavBar menus={menus} />
           {children}
