@@ -1,105 +1,81 @@
 import * as React from 'react';
-import List from '@mui/joy/List';
-import ListItem from '@mui/joy/ListItem';
-import ListItemButton, { listItemButtonClasses } from '@mui/joy/ListItemButton';
-import Typography from '@mui/joy/Typography';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import Card from '@mui/joy/Card';
-import CardContent from '@mui/joy/CardContent';
-import CardOverflow from '@mui/joy/CardOverflow';
-import ItemWorkExperience from './items/itemWorkExperience';
+import Stepper from '@mui/joy/Stepper';
+import { Box } from '@mui/joy';
+import Step, { stepClasses } from '@mui/joy/Step';
+import StepIndicator, { stepIndicatorClasses } from '@mui/joy/StepIndicator';
+import Typography, { typographyClasses } from '@mui/joy/Typography';
+import { FaLaptopCode } from "react-icons/fa";
+import { GiTeacher } from "react-icons/gi";
+import ItemWorkExperience from './items/ItemWorkExperience';
+import { workExperienceArray } from '@/assets/data/work_experience';
+import { ItemWorkExperienceProps } from '@/app/types/types';
+import { formatDate } from '@/assets/utilityFunctions';
 
-export default function Experiencecs() {
-  const [open, setOpen] = React.useState(false);
-  const [open2, setOpen2] = React.useState(false);
+const styleAlternateStep = {
+  position: 'relative',
+  textAlign: { xs: 'left', md: 'right' },
+  left: {
+    xs: 0,
+    sm: 0,
+    md: '-280px'
+  }
+};
+
+export default function Experiences() {
   return (
-    <Card
-    size="lg"
-    variant="plain"
-    orientation="vertical"
-    sx={{
-        border: 0,
-        borderRadius: 0,
-        textAlign: 'center',
-        maxWidth: '100%',
-        overflow: 'auto',
-    }}
->
-    <CardOverflow
-        sx={{
-            display: 'flex',
-            paddingTop: 5,
-            flexDirection: 'column',
-            justifyContent: 'center',
-            px: 'var(--Card-padding)',
-        }}
-    >
-        <Typography fontSize="xl4" fontWeight="xl" textColor="#000">
-            Experiences
-        </Typography>
+    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'stretch' }}>
+      <Typography level="h2" sx={{textAlign:'center',paddingY:10}}>
+        My Journey so far
+      </Typography>
+      <Box sx={{  width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
 
-    </CardOverflow>
-    <CardContent sx={{ gap: 1.5, minWidth: 200,paddingX:7 }}>
-    <List
-        size="lg"
-        sx={(theme) => ({
-          // Gatsby colors
-          '--joy-palette-primary-plainColor': '#8a4baf',
-          '--joy-palette-neutral-plainHoverBg': 'transparent',
-          '--joy-palette-neutral-plainActiveBg': 'transparent',
-          '--joy-palette-primary-plainHoverBg': 'transparent',
-          '--joy-palette-primary-plainActiveBg': 'transparent',
-          [theme.getColorSchemeSelector('dark')]: {
-            '--joy-palette-text-secondary': '#635e69',
-            '--joy-palette-primary-plainColor': '#d48cff',
-          },
+        <Stepper
+          orientation="vertical"
+          sx={{
+            '--Stepper-verticalGap': '6rem',
+            '--StepIndicator-size': '6rem',
+            '--Step-gap': '1rem',
+            '--Step-connectorInset': '0rem',
+            '--Step-connectorRadius': '5rem',
+            '--Step-connectorThickness': '4px',
+            '--joy-palette-success-solidBg': 'var(--joy-palette-success-400)',
+            [`& .${stepClasses.completed}`]: {
+              '&::after': { bgcolor: 'success.solidBg' },
+            },
+            [`& .${stepClasses.active}`]: {
+              [`& .${stepIndicatorClasses.root}`]: {
+                border: '1px solid black',
+                boxShadow: (theme) => `0 0 0 1px ${theme.vars.palette.primary[500]}`,
+              },
+            },
+            [`& .${stepClasses.disabled} *`]: {
+              color: 'neutral.softDisabledColor',
+            },
+            [`& .${typographyClasses['title-sm']}`]: {
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              fontSize: '10px',
+            },
+          }}
+        >
+          {
+            workExperienceArray.map((workExperience: ItemWorkExperienceProps, index) => {
+              return <Step key={index}
+                completed
+                indicator={
+                  <StepIndicator >
+                    <Typography level="title-md" >{formatDate(workExperience.startDate)}</Typography>
+                  </StepIndicator>
+                }
+              >
+                <ItemWorkExperience {...workExperience} />
+              </Step>
 
-          '--List-insetStart': '32px',
-          '--ListItem-paddingY': '0px',
-          '--ListItem-paddingRight': '16px',
-          '--ListItem-paddingLeft': '21px',
-          '--ListItem-startActionWidth': '0px',
-          '--ListItem-startActionTranslateX': '-50%',
+            })
+          }
 
-          [`& .${listItemButtonClasses.root}`]: {
-            borderLeftColor: 'divider',
-          },
-          [`& .${listItemButtonClasses.root}.${listItemButtonClasses.selected}`]: {
-            borderLeftColor: 'currentColor',
-          },
-          '& [class*="startAction"]': {
-            color: 'var(--joy-palette-text-tertiary)',
-          },
-        })}
-      >
-        <ListItem nested>
-          <ListItem component="div" startAction={<BusinessCenterIcon />}>
-           
-          </ListItem>
-          <List sx={{ '--List-gap': '0px' }}>
-            <ListItem >
-              <ListItemButton sx={{display: 'inline-block'}}><ItemWorkExperience designation='Lecturer @ London South Bank University' dates='February, 2022 - Present' duties='    Curriculum Design and Preparation
-    Delivery of Engaging and Informative Tutorials, 
-    Evaluation and Feedback, 
-    Support and Guidance'/></ListItemButton>
-            </ListItem>
-          </List>
-        </ListItem>
-        <ListItem nested>
-          <ListItem component="div" startAction={<BusinessCenterIcon />}>
-           
-          </ListItem>
-          <List sx={{ '--List-gap': '0px' }}>
-            <ListItem >
-            <ListItemButton sx={{display: 'inline-block'}}><ItemWorkExperience designation='Full Stack Developer @ London South Bank University' dates='June, 2021 - Present' duties='    Full-Stack Development: Engaging in end-to-end development of web applications, handling both front-end and back-end aspects of the software.
-    Technology Implementation: Implementing various technologies, frameworks, and languages to create scalable and robust applications.
-    Problem-Solving and Troubleshooting: Identifying issues, debugging code, and devising effective solutions to technical challenges that arise during development.
-    Collaboration and Teamwork: Working collaboratively within teams to brainstorm, share ideas, and contribute to the development process, ensuring a cohesive and efficient workflow.'/></ListItemButton>
-            </ListItem>
-          </List>
-        </ListItem>
-      </List>
-    </CardContent>
-</Card>
-  )
+        </Stepper>
+      </Box>
+    </Box>
+  );
 }

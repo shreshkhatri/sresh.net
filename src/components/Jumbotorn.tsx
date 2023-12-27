@@ -23,8 +23,8 @@ export default function Jumbotorn() {
             'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
         }}
       />
-      <CardContent sx={{ justifyContent: 'flex-end' }}>
-        <Typography level="h1" textColor="#fff" textAlign='center'>
+      <CardContent sx={{ justifyContent: 'center' }}>
+        <Typography level="h3" textColor="#fff" textAlign='center'>
         Redefining IT Excellence, Your Partner in Progress
         </Typography>
         <Typography

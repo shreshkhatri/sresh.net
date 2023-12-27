@@ -47,7 +47,7 @@ export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFri
         >
           {
             menus.map((menu, index) => {
-              return (<Link key={index} href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase()) ? '/' : `/${menu.toLocaleLowerCase()}`}><ListItemButton >{menu}</ListItemButton></Link>)
+              return (<Link style={{textDecoration:'none'}} key={index} href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase()) ? '/' : `/${menu.toLocaleLowerCase()}`}><ListItemButton >{menu}</ListItemButton></Link>)
             })
           }
 

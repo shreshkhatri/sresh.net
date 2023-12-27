@@ -28,28 +28,22 @@ export default function Introduction() {
                     px: 'var(--Card-padding)',
                 }}
             >
-                <Typography fontSize="xl4" fontWeight="xl" textColor="#000">
-                    Introduction
-                </Typography>
 
             </CardOverflow>
-            <CardContent sx={{ gap: 1.5, minWidth: 200,paddingX:7 }}>
-                <CardContent>
-                    <Typography fontSize="md" sx={{ mt: 0.5 }}>
-                        With a seasoned career spanning over two years collaborating with esteemed clients such as QuickBlox (www.quickblox.com), StartUpDen (startupden.org), and Prosol Ltd, my journey has been defined by the pursuit of innovation and technological excellence. Spearheading the development of AI-driven web applications, I&apos;ve had the privilege to deliver cutting-edge solutions tailored to meet the unique needs of these prominent clients. Notably, my collaboration with QuickBlox facilitated the creation of user-friendly web experiences, while the association with StartUpDen enabled the development of a virtual incubator utilizing leading-edge technologies.
-
-                        <br></br><br></br>Moreover, my impactful tenure with London South Bank University served as a platform to hone my expertise, leveraging innovative technologies such as Next.js, TypeScript, MUI, and JOY to craft AI-powered solutions and NLP models. Guiding students through lecture sessions, providing insights into NLP, and ensuring a comprehensive learning experience, I&apos;ve actively contributed to shaping the next generation of tech enthusiasts while expanding the horizons of technology in academia.
-
-                        <br></br><br></br>My journey continues, driven by an unwavering commitment to pushing the boundaries of innovation, creating impactful user experiences, and contributing to pioneering technological solutions in collaboration with forward-thinking entities.
+            <CardContent sx={{gap:5}} >
+                <CardContent sx={{gap:5}}>
+                    <Typography level='h2' textAlign={'center'}>Greetings!</Typography>
+                    <Typography level="body-md" textAlign="center" >
+                     Welcome to my website!, I am Suresh Khatri, an accomplished full-stack developer with over two years of experience specializing in the creation of AI-powered Virtual Assistants and the implementation of Natural Language Processing (NLP) models. My journey includes leading the development of innovative web applications for prominent clients like www.quickblox.com, Lewisham Council, and StartupDen in the UK. Proficient in a diverse range of technologies such as NextJS, React, Flask, Node.js, and MongoDB, I excel in integrating cutting-edge tools like Rasa, NLP JS, and ChatGPT to elevate user interactions. I am passionate about leveraging my skills as a JavaScript/Python developer to contribute to the dynamic field of software development. Let's connect and explore the possibilities of collaboration!
                     </Typography>
                 </CardContent>
-                <Button
+                <Button 
                     variant="outlined"
-                    color="primary"
+                    color="neutral"
                     sx={{
                         '--variant-borderWidth': '2px',
                         borderRadius: 40,
-                        borderColor: 'primary.500',
+                        borderColor: 'black',
                         mx: 'auto',
                     }}
                 >

@@ -89,7 +89,7 @@ export default function TopNavBar({ menus }: TopNavBarProps) {
     
     return (
 
-        <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, minHeight: 20, width: '100vw' }}>
+        <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, minHeight: 20, width: '100%' }}>
             <List
                 role="menubar"
                 orientation="horizontal"
@@ -108,7 +108,7 @@ export default function TopNavBar({ menus }: TopNavBarProps) {
                 {menus.map((menu, index) => {
                     return (
                         <ListItem key={index} role="none">
-                            <Link href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase())?'/':`/${menu.toLocaleLowerCase()}`}>
+                            <Link style={{textDecoration:'none'}} href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase())?'/':`/${menu.toLocaleLowerCase()}`}>
                                 <ListItemButton
                                     role="menuitem"
                                     {...getTargetProps(index)}

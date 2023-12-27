@@ -13,15 +13,14 @@ export interface CountryType {
   // MobileFriendlyDrawerProps.tsx : the type for specifying opening and closing state of the drawer
 export interface ItemWorkExperienceProps {
     designation: string,
-    dates: string,
-    duties:string
-  }
-
-// MobileFriendlyDrawerProps.tsx : the type for specifying opening and closing state of the drawer
-export interface ItemWorkExperienceProps {
-    designation: string,
-    dates: string,
-    duties:string
+    startDate: string | null
+    endDate:string| null,
+    employer: string,
+    country: string,
+    city: string,
+    isContinue: boolean,
+    duties_responsibilities: string[],
+    achievements: string,
   }
   
   
