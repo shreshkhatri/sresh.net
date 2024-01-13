@@ -18,6 +18,7 @@ export default function Introduction() {
                 maxWidth: '100%',
                 overflow: 'auto',
             }}
+            
         >
             <CardOverflow
                 sx={{
@@ -38,8 +39,8 @@ export default function Introduction() {
                     </Typography>
                 </CardContent>
                 <Button 
-                    variant="outlined"
-                    color="neutral"
+                    variant="solid"
+                    color='neutral'
                     sx={{
                         '--variant-borderWidth': '2px',
                         borderRadius: 40,

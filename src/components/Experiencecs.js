@@ -4,31 +4,20 @@ import { Box } from '@mui/joy';
 import Step, { stepClasses } from '@mui/joy/Step';
 import StepIndicator, { stepIndicatorClasses } from '@mui/joy/StepIndicator';
 import Typography, { typographyClasses } from '@mui/joy/Typography';
-import { FaLaptopCode } from "react-icons/fa";
-import { GiTeacher } from "react-icons/gi";
-import ItemWorkExperience from './items/ItemWorkExperience';
+import ItemWorkExperience from './items/ItemExperience';
 import { workExperienceArray } from '@/assets/data/work_experience';
-import { ItemWorkExperienceProps } from '@/app/types/types';
 import { formatDate } from '@/assets/utilityFunctions';
-
-const styleAlternateStep = {
-  position: 'relative',
-  textAlign: { xs: 'left', md: 'right' },
-  left: {
-    xs: 0,
-    sm: 0,
-    md: '-280px'
-  }
-};
+import Fade from 'react-reveal/Fade';
 
 export default function Experiences() {
+
+
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'stretch' }}>
-      <Typography level="h2" sx={{textAlign:'center',paddingY:10}}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }} >
+      <Typography level="h2" sx={{ textAlign: 'center', paddingY: 5 }}>
         My Journey so far
       </Typography>
-      <Box sx={{  width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-
+      <Box sx={{ display: 'flex', flexDirection: 'row', paddingBottom: 10, paddingX: { xs: 4, sm: 4, md: 25, lg: 30, xl: 45 } }}>
         <Stepper
           orientation="vertical"
           sx={{
@@ -37,7 +26,6 @@ export default function Experiences() {
             '--Step-gap': '1rem',
             '--Step-connectorInset': '0rem',
             '--Step-connectorRadius': '5rem',
-            '--Step-connectorThickness': '4px',
             '--joy-palette-success-solidBg': 'var(--joy-palette-success-400)',
             [`& .${stepClasses.completed}`]: {
               '&::after': { bgcolor: 'success.solidBg' },
@@ -58,21 +46,26 @@ export default function Experiences() {
             },
           }}
         >
-          {
-            workExperienceArray.map((workExperience: ItemWorkExperienceProps, index) => {
-              return <Step key={index}
-                completed
-                indicator={
-                  <StepIndicator >
-                    <Typography level="title-md" >{formatDate(workExperience.startDate)}</Typography>
-                  </StepIndicator>
-                }
-              >
-                <ItemWorkExperience {...workExperience} />
-              </Step>
+          <Fade>
+            {
+              workExperienceArray.map((workExperience, index) => {
+                return <Step
+                  key={index}
+                  completed
+                  sx={{
+                    '--Step-connectorThickness':index==workExperienceArray.length-1?'0px':'3px'
+                  }}
+                  indicator={
+                    <StepIndicator variant='outlined' sx={{borderStyle:'double',borderWidth: '5px'}} >
+                      <Typography level="title-md" >{formatDate(workExperience.startDate)} </Typography>
+                    </StepIndicator>}
 
-            })
-          }
+                >
+                  <ItemWorkExperience {...workExperience} />
+                </Step>
+              })
+            }
+          </Fade>
 
         </Stepper>
       </Box>

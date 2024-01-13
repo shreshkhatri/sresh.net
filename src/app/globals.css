@@ -18,3 +18,19 @@ body {
   color: rgb(var(--foreground-rgb));
   background: '#fff';
 }
+
+.loading-icon {
+  color: rgb(17, 17, 17);
+  font-size: 3rem;
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

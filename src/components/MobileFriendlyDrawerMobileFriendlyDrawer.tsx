@@ -10,14 +10,14 @@ import ModalClose from '@mui/joy/ModalClose';
 import Menu from '@mui/icons-material/Menu';
 import { MobileFriendlyDrawerProps } from '../app/types/types';
 import { Grid } from '@mui/joy';
-import { PATH_TO_ROOT } from '@/app/assets/data';
+import { PATH_TO_ROOT } from '@/assets/data/data';
 import ModeToggler from './ModeToggler';
 
 export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFriendlyDrawerProps) {
 
 
   return (
-    <Grid sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }}>
+    <Grid sx={{ display: { xs: 'flex', sm: 'flex' } }}>
       <IconButton sx={{ padding: 2 }} color="neutral" onClick={() => setOpen(true)}>
         <Menu />
       </IconButton>

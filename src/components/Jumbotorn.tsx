@@ -8,12 +8,11 @@ import Image from 'next/image';
 export default function Jumbotorn() {
   return (
     <Card sx={{ minHeight: '500px', width: '100%',border:0,
-    borderRadius:0,}}>
+    borderRadius:0,}} >
       <CardCover>
-        <Image
+        <Image priority={false}
           fill={true}
           src="/images/suresh.jpeg"
-          loading="lazy"
           alt="Suresh's picture from graduation"
         />
       </CardCover>
@@ -23,7 +22,7 @@ export default function Jumbotorn() {
             'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
         }}
       />
-      <CardContent sx={{ justifyContent: 'center' }}>
+      <CardContent sx={{ justifyContent: 'end' }}>
         <Typography level="h3" textColor="#fff" textAlign='center'>
         Redefining IT Excellence, Your Partner in Progress
         </Typography>
