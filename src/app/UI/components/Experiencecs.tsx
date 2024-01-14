@@ -5,8 +5,8 @@ import Step, { stepClasses } from '@mui/joy/Step';
 import StepIndicator, { stepIndicatorClasses } from '@mui/joy/StepIndicator';
 import Typography, { typographyClasses } from '@mui/joy/Typography';
 import ItemWorkExperience from './items/ItemExperience';
-import { workExperienceArray } from '@/assets/data/work_experience';
-import { formatDate } from '@/assets/utilityFunctions';
+import { workExperienceArray } from '@/app/lib/assets/data/work_experience';
+import { formatDate } from '@/app/lib/assets/utilityFunctions';
 import Fade from 'react-reveal/Fade';
 
 export default function Experiences() {

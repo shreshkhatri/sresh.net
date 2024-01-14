@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { userMessageType } from "@/app/types/types";
+import { userMessageType } from "@/app/lib/assets/types/types";
 import validator from "validator";
 import {
   getConnectionObject,
   closeConnection,
-} from "@/assets/data/datamanagement";
+} from "@/app/lib/assets/data/datamanagement";
 
 // creating a schema for message payload
 const MessageSchema = z

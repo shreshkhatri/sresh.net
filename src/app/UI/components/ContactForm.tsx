@@ -16,7 +16,7 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CountrySelector from "./CountrySelector";
 import ProfileCard from "./ProfileCard";
-import { CountryType, ResponseStatus } from "../app/types/types";
+import { CountryType,ResponseStatus } from "@/app/lib/assets/types/types";
 import validator from "validator";
 
 export default function ContactForm() {

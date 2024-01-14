@@ -10,8 +10,8 @@ export default function Experiences() {
     
       
       return (
-        <Box display={'flex'} justifyContent={'center'}>
-            <Typography> Gallery Page Under construction</Typography>
+        <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} sx={{minHeight:'80vh'}}>
+            <Typography textAlign={'center'}> Gallery Page Under construction</Typography>
         </Box>
       )
 }

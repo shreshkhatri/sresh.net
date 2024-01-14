@@ -1,16 +1,16 @@
 "use client";
 import "./globals.css";
 import React, { useState, useEffect } from "react";
-import MobileFriendlyDrawer from "@/components/MobileFriendlyDrawerMobileFriendlyDrawer";
-import TopNavBar from "@/components/TopNavBar";
+import MobileFriendlyDrawer from "@/app/UI/components/MobileFriendlyDrawerMobileFriendlyDrawer";
+import TopNavBar from "@/app/UI/components/TopNavBar";
 import { getInitColorSchemeScript } from "@mui/joy/styles";
-import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
-import NetworkStatus from "@/components/InternetConnectionStatus";
+import ThemeRegistry from "@/app/UI/components/ThemeRegistry/ThemeRegistry";
+import NetworkStatus from "@/app/UI/components/InternetConnectionStatus";
 import { Box } from "@mui/joy";
-import CookiePolicy from "@/components/CookiePolicy";
+import CookiePolicy from "@/app/UI/components/CookiePolicy";
 import Cookies from "js-cookie";
-import { cookiePreferenceProps } from "./types/types";
-import Footer from "@/components/Footer";
+import { cookiePreferenceProps } from "@/app/lib/assets/types/types";
+import Footer from "@/app/UI/components/Footer";
 
 export default function RootLayout({
   children,

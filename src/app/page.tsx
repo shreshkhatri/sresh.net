@@ -1,10 +1,9 @@
 'use client';
 import { useEffect } from 'react';
-import Experiencecs from '@/components/Experiencecs';
-import Introduction from '@/components/Introduction';
-import Jumbotorn from '@/components/Jumbotorn';
-import Skills from '@/components/Skills';
-
+import Jumbotorn from './UI/components/Jumbotorn';
+import Introduction from './UI/components/Introduction';
+import Skills from './UI/components/Skills';
+import Experiences from './UI/components/Experiencecs';
 
 export default function Home() {
 
@@ -16,7 +15,7 @@ export default function Home() {
     <div>
       <Jumbotorn />
       <Introduction />
-      <Experiencecs />
+      <Experiences />
       <Skills />
     </div>
   )

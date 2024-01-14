@@ -11,7 +11,7 @@ import FormHelperText from "@mui/joy/FormHelperText";
 import Sheet from "@mui/joy/Sheet";
 import Switch from "@mui/joy/Switch";
 import Typography from "@mui/joy/Typography";
-import { cookiePreferenceProps, cookiePolicyProps } from "@/app/types/types";
+import { cookiePolicyProps } from "@/app/lib/assets/types/types";
 
 export default function CookiePolicy({
   showCookiePortal,

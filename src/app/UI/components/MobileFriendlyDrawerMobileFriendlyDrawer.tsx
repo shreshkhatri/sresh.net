@@ -8,9 +8,9 @@ import List from '@mui/joy/List';
 import ListItemButton from '@mui/joy/ListItemButton';
 import ModalClose from '@mui/joy/ModalClose';
 import Menu from '@mui/icons-material/Menu';
-import { MobileFriendlyDrawerProps } from '../app/types/types';
+import { MobileFriendlyDrawerProps } from '@/app/lib/assets/types/types';
 import { Grid } from '@mui/joy';
-import { PATH_TO_ROOT } from '@/assets/data/data';
+import { PATH_TO_ROOT } from '@/app/lib/assets/data';
 import ModeToggler from './ModeToggler';
 
 export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFriendlyDrawerProps) {

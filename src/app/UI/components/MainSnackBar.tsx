@@ -1,7 +1,7 @@
 import Button from "@mui/joy/Button";
 import Snackbar from "@mui/joy/Snackbar";
 import { GiCheckMark } from "react-icons/gi";
-import { MainSnackBarProps } from "@/app/types/types";
+import { MainSnackBarProps } from "@/app/lib/assets/types/types";
 import { CiWarning } from "react-icons/ci";
 
 export default function MainSnackBar({

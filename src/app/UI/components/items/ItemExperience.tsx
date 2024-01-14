@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Typography from '@mui/joy/Typography';
-import { ItemWorkExperienceProps } from '@/app/types/types';
+import { ItemWorkExperienceProps } from '@/app/lib/assets/types/types';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
