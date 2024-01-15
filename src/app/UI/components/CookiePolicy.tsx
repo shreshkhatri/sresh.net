@@ -1,3 +1,4 @@
+"use client";
 import { useState, Fragment } from "react";
 import Box from "@mui/joy/Box";
 import Drawer from "@mui/joy/Drawer";
@@ -11,30 +12,30 @@ import FormHelperText from "@mui/joy/FormHelperText";
 import Sheet from "@mui/joy/Sheet";
 import Switch from "@mui/joy/Switch";
 import Typography from "@mui/joy/Typography";
-import { cookiePolicyProps } from "@/app/lib/assets/types/types";
+import Cookies from "js-cookie";
 
-export default function CookiePolicy({
-  showCookiePortal,
-  setShowCookiePortal,
-  reportCookieSelectionOptions,
-}: cookiePolicyProps) {
+export default function CookiePolicy() {
+  const [open, setOpen] = useState(true);
   const [acceptEssentialCookie, setAcceptEssentialCookie] = useState(false);
   const [acceptFunctionalCookie, setAcceptFunctionalCookie] = useState(false);
+
+  const reportCookieSelectionOptions = () => {
+    acceptEssentialCookie &&
+      Cookies.set("essentialCookie", "true", { expires: 365 });
+    acceptFunctionalCookie &&
+      Cookies.set("functionalCookie", "true", { expires: 365 });
+  };
+
   return (
     <Drawer
       anchor="bottom"
       size="md"
       variant="plain"
-      open={showCookiePortal}
+      open={open}
       onClose={(event: object, reason: string) => {
         if (reason === "closeClick") {
-
-          reportCookieSelectionOptions({
-            essentialCookie: acceptEssentialCookie,
-            functionalCookie: acceptFunctionalCookie,
-          });
-
-          setShowCookiePortal(false);
+          reportCookieSelectionOptions();
+          setOpen(false);
         }
       }}
       slotProps={{

@@ -6,7 +6,7 @@ import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 import Link from 'next/link'
 import { TopNavBarProps } from '@/app/lib/assets/types/types';
-import { PATH_TO_ROOT } from '@/app/lib/assets/data';
+import { PATH_TO_ROOT } from '@/app/lib/assets/data/data';
 import ModeToggler from './ModeToggler';
 
 type Options = {

@@ -20,7 +20,6 @@ body {
 }
 
 .loading-icon {
-  color: rgb(17, 17, 17);
   font-size: 3rem;
   animation: animate 1s linear infinite;
 }

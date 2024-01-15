@@ -1,3 +1,4 @@
+'use client';
 import * as React from 'react';
 import Stepper from '@mui/joy/Stepper';
 import { Box } from '@mui/joy';
@@ -5,11 +6,12 @@ import Step, { stepClasses } from '@mui/joy/Step';
 import StepIndicator, { stepIndicatorClasses } from '@mui/joy/StepIndicator';
 import Typography, { typographyClasses } from '@mui/joy/Typography';
 import ItemWorkExperience from './items/ItemExperience';
-import { workExperienceArray } from '@/app/lib/assets/data/work_experience';
 import { formatDate } from '@/app/lib/assets/utilityFunctions';
 import Fade from 'react-reveal/Fade';
+import { TypeExperiences,TypeExperience} from '@/app/lib/assets/types/types';
 
-export default function Experiences() {
+
+export default function Experiences({experiences}:TypeExperiences) {
 
 
   return (
@@ -48,12 +50,12 @@ export default function Experiences() {
         >
           <Fade>
             {
-              workExperienceArray.map((workExperience, index) => {
+              experiences.map((workExperience:TypeExperience, index) => {
                 return <Step
                   key={index}
                   completed
                   sx={{
-                    '--Step-connectorThickness':index==workExperienceArray.length-1?'0px':'3px'
+                    '--Step-connectorThickness':index==experiences.length-1?'0px':'3px'
                   }}
                   indicator={
                     <StepIndicator variant='outlined' sx={{borderStyle:'double',borderWidth: '5px'}} >

@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from 'react';
 import Snackbar from '@mui/joy/Snackbar';
 import { IoClose } from "react-icons/io5";

@@ -8,13 +8,13 @@ import List from '@mui/joy/List';
 import ListItemButton from '@mui/joy/ListItemButton';
 import ModalClose from '@mui/joy/ModalClose';
 import Menu from '@mui/icons-material/Menu';
-import { MobileFriendlyDrawerProps } from '@/app/lib/assets/types/types';
 import { Grid } from '@mui/joy';
-import { PATH_TO_ROOT } from '@/app/lib/assets/data';
+import { PATH_TO_ROOT } from '@/app/lib/assets/data/data';
 import ModeToggler from './ModeToggler';
+import { TopNavBarProps } from '@/app/lib/assets/types/types';
 
-export default function MobileFriendlyDrawer({ open, setOpen, menus }: MobileFriendlyDrawerProps) {
-
+export default function MobileFriendlyDrawer({menus}:TopNavBarProps) {
+  const [open, setOpen] = useState(false);
 
   return (
     <Grid sx={{ display: { xs: 'flex', sm: 'flex' } }}>

@@ -1,3 +1,4 @@
+import type { WithId, Document} from 'mongodb'
 
 export interface CountrySelectorProps {
   country: CountryType | null;
@@ -12,7 +13,7 @@ export interface CountryType {
 }
 
 // MobileFriendlyDrawerProps.tsx : the type for specifying opening and closing state of the drawer
-export interface ItemWorkExperienceProps {
+export interface TypeExperience extends WithId<Document> {
   designation: string;
   startDate: string | null;
   endDate: string | null;
@@ -23,6 +24,11 @@ export interface ItemWorkExperienceProps {
   duties_responsibilities: string[];
   achievements: string;
 }
+
+export type TypeExperiences = {
+  experiences:TypeExperience[]
+}
+
 
 // MobileFriendlyDrawerProps.tsx : the type for specifying opening and closing state of the drawer
 export interface MobileFriendlyDrawerProps {
@@ -41,8 +47,6 @@ export type cookiePreferenceProps = {
 };
 
 export type cookiePolicyProps = {
-  showCookiePortal: boolean;
-  setShowCookiePortal: (showCookiePortal: boolean) => void;
   reportCookieSelectionOptions: (
     cookiePreference: cookiePreferenceProps
   ) => void;

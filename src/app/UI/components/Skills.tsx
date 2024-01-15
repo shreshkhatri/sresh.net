@@ -1,3 +1,4 @@
+'use client';
 import { Box, Card, Typography } from "@mui/joy";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GrReactjs } from "react-icons/gr";
