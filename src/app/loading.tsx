@@ -24,7 +24,7 @@ export default function Loader() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 width:'100%',
-                minHeight:'80vh'
+                minHeight:'100vh'
             }}
         >
             <Typography sx={{ ...sx ,color:'lightgreen'}} textAlign={'center'}><ImSpinner9 className="loading-icon" /></Typography>

@@ -1,16 +1,8 @@
 import "./globals.css";
 import React from "react";
 import { Metadata } from 'next'
-import MobileFriendlyDrawer from "@/app/UI/components/MobileFriendlyDrawerMobileFriendlyDrawer";
-import TopNavBar from "@/app/UI/components/TopNavBar";
 import ThemeRegistry from "@/app/UI/components/ThemeRegistry/ThemeRegistry";
-import NetworkStatus from "@/app/UI/components/InternetConnectionStatus";
-import { Box } from "@mui/joy";
-import CookiePolicy from "@/app/UI/components/CookiePolicy";
-import Footer from "@/app/UI/components/Footer";
 import { inter } from "./UI/components/ThemeRegistry/fonts";
-import { MENU_ITEMS } from "./lib/assets/data/data";
-import { cookies } from 'next/headers'
 
 export const metadata:Metadata = {
   title: {
@@ -33,27 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
-  const cookieStore = cookies();
-  const essentialCookie = cookieStore.get('essentialCookie');
-  const functionalCookie = cookieStore.get('functionalCookie');
+
 
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
         <ThemeRegistry>
-          <Box display={"flex"}>
-            <MobileFriendlyDrawer menus={MENU_ITEMS} />
-            <TopNavBar menus={MENU_ITEMS} />
-          </Box>
-
           {children}
-          
-          
-          {!essentialCookie && <CookiePolicy  />}
-          <NetworkStatus />
-          <Footer />
         </ThemeRegistry>
-        
       </body>
     </html>
   );
