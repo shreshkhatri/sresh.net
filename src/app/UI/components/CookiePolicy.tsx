@@ -21,9 +21,9 @@ export default function CookiePolicy() {
 
   const reportCookieSelectionOptions = () => {
     acceptEssentialCookie &&
-      Cookies.set("essentialCookie", "true", { expires: 365 });
+      Cookies.set("essentialCookie", "true", {expires: 365 ,sameSite:'strict' });
     acceptFunctionalCookie &&
-      Cookies.set("functionalCookie", "true", { expires: 365 });
+      Cookies.set("functionalCookie", "true", { expires: 365,sameSite:'strict' });
   };
 
   return (
