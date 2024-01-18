@@ -15,7 +15,7 @@ export default function ProfileCard() {
             }}
         >
             <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>
-                <Avatar src="/static/images/avatar/1.jpg" sx={{ '--Avatar-size': '4rem' }} />
+                <Avatar src="/images/SureshProfilePic.jpeg" sx={{ '--Avatar-size': '10rem',border:'3px solid white' }} />
                 <Typography level="title-lg">Suresh Khatri</Typography>
                 <Typography level="body-sm" >You could write me on any of the following email addresses</Typography>
                 <Typography level="body-sm" fontWeight={'bold'}>
