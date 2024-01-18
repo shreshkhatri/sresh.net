@@ -12,7 +12,7 @@ export default function Jumbotorn() {
       <CardCover>
         <Image priority={false}
           fill={true}
-          src="/images/suresh.jpeg"
+          src="/images/theme.jpeg"
           alt="Suresh's picture from graduation"
         />
       </CardCover>

@@ -76,3 +76,10 @@ export type TypeLoginPayload = {
   username:string,
   password:string
 }
+
+
+
+  export type ImgsViewerProps = {
+      [key: string]: any;
+  }
+
