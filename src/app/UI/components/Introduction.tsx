@@ -8,7 +8,6 @@ export default function Introduction() {
   return (
     <Card
       size="lg"
-      variant="plain"
       orientation="vertical"
       sx={{
         border: 0,

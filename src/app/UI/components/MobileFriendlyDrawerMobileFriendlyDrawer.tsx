@@ -11,9 +11,9 @@ import Menu from '@mui/icons-material/Menu';
 import { Grid } from '@mui/joy';
 import { PATH_TO_ROOT } from '@/app/lib/assets/data/data';
 import ModeToggler from './ModeToggler';
-import { TopNavBarProps } from '@/app/lib/assets/types/types';
+import { PageTemplateProps } from '@/app/lib/assets/types/types';
 
-export default function MobileFriendlyDrawer({menus}:TopNavBarProps) {
+export default function MobileFriendlyDrawer({menus,selectedMenu}:PageTemplateProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -47,7 +47,7 @@ export default function MobileFriendlyDrawer({menus}:TopNavBarProps) {
         >
           {
             menus.map((menu, index) => {
-              return (<Link style={{textDecoration:'none'}} key={index} href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase()) ? '/' : `/${menu.toLocaleLowerCase()}`}><ListItemButton >{menu}</ListItemButton></Link>)
+              return (<Link style={{textDecoration:'none'}} key={index} href={PATH_TO_ROOT.includes(menu.toLocaleLowerCase()) ? '/' : `/${menu.toLocaleLowerCase()}`}><ListItemButton selected={menu.toLocaleLowerCase()===selectedMenu?true:false} >{menu}</ListItemButton></Link>)
             })
           }
 

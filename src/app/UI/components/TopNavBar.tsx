@@ -1,11 +1,11 @@
 'use client'
-import  React from 'react';
+import  React,{useState} from 'react';
 import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 import Link from 'next/link'
-import { TopNavBarProps } from '@/app/lib/assets/types/types';
+import { PageTemplateProps } from '@/app/lib/assets/types/types';
 import { PATH_TO_ROOT } from '@/app/lib/assets/data/data';
 import ModeToggler from './ModeToggler';
 
@@ -82,9 +82,10 @@ const useRovingIndex = (options?: Options) => {
 };
 
 
-export default function TopNavBar({ menus }: TopNavBarProps) {
+export default function TopNavBar({ menus,selectedMenu }: PageTemplateProps) {
     const { targets, getTargetProps, setActiveIndex, focusNext, focusPrevious } =
         useRovingIndex();
+
 
     
     return (
@@ -100,7 +101,6 @@ export default function TopNavBar({ menus }: TopNavBarProps) {
                     width: 'inherit',
                     height: 'inherit',
                     '--List-radius': '8px',
-
                     '--List-gap': '8px',
                     '--ListItem-gap': '0px',
                 }}
@@ -113,6 +113,7 @@ export default function TopNavBar({ menus }: TopNavBarProps) {
                                     role="menuitem"
                                     {...getTargetProps(index)}
                                     sx={{ fontWeight: 'bold' }}
+                                    selected={menu.toLocaleLowerCase()===selectedMenu?true:false}
                                 >
                                     {menu}
                                 </ListItemButton>

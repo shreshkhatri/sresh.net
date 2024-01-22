@@ -30,17 +30,6 @@ export type TypeExperiences = {
 }
 
 
-// MobileFriendlyDrawerProps.tsx : the type for specifying opening and closing state of the drawer
-export interface MobileFriendlyDrawerProps {
-  open: boolean;
-  setOpen: (newState: boolean) => void;
-  menus: string[];
-}
-
-export interface TopNavBarProps {
-  menus: string[];
-}
-
 export type cookiePreferenceProps = {
   essentialCookie: boolean;
   functionalCookie: boolean;
@@ -83,3 +72,7 @@ export type TypeLoginPayload = {
       [key: string]: any;
   }
 
+  export interface PageTemplateProps {
+    menus: string[];
+    selectedMenu:string,
+  }

@@ -1,15 +1,15 @@
 
 import { Box } from "@mui/joy";
-import { MENU_ITEMS } from "@/app/lib/assets/data/data";
 import MobileFriendlyDrawer from "@/app/UI/components/MobileFriendlyDrawerMobileFriendlyDrawer";
 import TopNavBar from "@/app/UI/components/TopNavBar";
+import { PageTemplateProps } from "@/app/lib/assets/types/types";
 
-export default async function MainMenuBars() {
+export default async function MainMenuBars(menuBarProps:PageTemplateProps) {
 
   return (
       <Box display={'flex'} flexDirection={'row'}>
-      <MobileFriendlyDrawer menus={MENU_ITEMS} />
-      <TopNavBar menus={MENU_ITEMS} />
+      <MobileFriendlyDrawer {...menuBarProps} />
+      <TopNavBar {...menuBarProps} />
       </Box>
   );
 }
