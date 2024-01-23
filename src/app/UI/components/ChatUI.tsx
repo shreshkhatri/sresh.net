@@ -10,8 +10,10 @@ import { IconButton } from "@mui/joy";
 import { PiChatsCircleLight } from "react-icons/pi";
 import ItemAssistantMessage from "./items/ItemAssistantMessage";
 import ItemUserMessage from "./items/ItemUserMessage";
+import { useColorScheme } from '@mui/joy/styles';
 
 export default function ChatUI() {
+  const { mode } = useColorScheme();
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   const [isMinimized, setIsMinimized] = useState<boolean>(true);
@@ -51,9 +53,9 @@ export default function ChatUI() {
             sm: "70vh",
             md: "70vh",
           },
-          backgroundColor: "Background",
           borderRadius: 5,
           zIndex: 2,
+          backgroundColor:mode=='light'?'white':'#030D1E'
         }}
       >
         <Box
@@ -144,7 +146,7 @@ export default function ChatUI() {
           bottom: 10,
           right: 15,
           cursor: "pointer",
-          zIndex: 99999,
+          zIndex: 5,
         }}
         onClick={() => setIsMinimized(false)}
       >
