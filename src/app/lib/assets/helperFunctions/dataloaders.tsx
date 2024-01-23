@@ -12,11 +12,9 @@ export async function getExperiences(): Promise<TypeExperience[]> {
       .collection<TypeExperience>(String(process.env.EXPERIENCES))
       .find({}, { projection: { _id: 0 } })
       .toArray();
-    return experiences;
+   return experiences
   } catch (error) {
     console.error("Error fetching experiences:", error);
     return [];
-  } finally {
-    closeConnection();
   }
 }
