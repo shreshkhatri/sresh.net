@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { Box, Typography, Input } from "@mui/joy";
+import { Box, Typography, Input, Textarea } from "@mui/joy";
 import { useChat } from "ai/react";
 import { TbMessage2 } from "react-icons/tb";
 import Badge from "@mui/joy/Badge";
@@ -10,7 +10,7 @@ import { IconButton } from "@mui/joy";
 import { PiChatsCircleLight } from "react-icons/pi";
 import ItemAssistantMessage from "./items/ItemAssistantMessage";
 import ItemUserMessage from "./items/ItemUserMessage";
-import { useColorScheme } from '@mui/joy/styles';
+import { useColorScheme } from "@mui/joy/styles";
 
 export default function ChatUI() {
   const { mode } = useColorScheme();
@@ -18,7 +18,9 @@ export default function ChatUI() {
 
   const [isMinimized, setIsMinimized] = useState<boolean>(true);
 
-  const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null); // the ref is necessary to achive scrolling to the recent messages inside message container
+  const messagesFormRef = useRef<HTMLFormElement>(null); // the ref is assigned to the form component which submits user typed message to the API
+  const submitButtonRef = useRef<HTMLButtonElement>(null); // the ref is assigned to submit button so that it can be called to submit the form manually from inside the keydown event of TextArea component
 
   // Function to scroll the container to the bottom
   const scrollToBottom = () => {
@@ -32,6 +34,15 @@ export default function ChatUI() {
     // Scroll to the bottom whenever messages are updated
     scrollToBottom();
   }, [messages]);
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault(); // Prevent newline insertion
+
+      // reqeustSubmit function is used instead of submit() in order to achieve the exact effect given by submit button click
+      messagesFormRef.current?.requestSubmit(submitButtonRef.current);
+    }
+  };
 
   return (
     <>
@@ -55,7 +66,7 @@ export default function ChatUI() {
           },
           borderRadius: 5,
           zIndex: 2,
-          backgroundColor:mode=='light'?'white':'#030D1E'
+          backgroundColor: mode == "light" ? "white" : "#030D1E",
         }}
       >
         <Box
@@ -73,7 +84,7 @@ export default function ChatUI() {
             color="neutral"
             sx={{ flexGrow: 1, textAlign: "center" }}
           >
-            Suresh&apos;s Assistant
+            Your Assistant
           </Typography>
           <IconButton
             aria-label="close chat window"
@@ -99,12 +110,23 @@ export default function ChatUI() {
             overflowY: "auto",
           }}
         >
-          <ItemAssistantMessage message={"Hey, How can I help you today?"} />
+          <ItemAssistantMessage
+            message={"Hey, How can I help you today?"}
+            date={new Date()}
+          />
           {messages.map((m) => {
             return m.role == "assistant" ? (
-              <ItemAssistantMessage key={m.id} message={m.content} />
+              <ItemAssistantMessage
+                key={m.id}
+                message={m.content}
+                date={m.createdAt}
+              />
             ) : (
-              <ItemUserMessage key={m.id} message={m.content} />
+              <ItemUserMessage
+                key={m.id}
+                message={m.content}
+                date={m.createdAt}
+              />
             );
           })}
         </Box>
@@ -118,12 +140,12 @@ export default function ChatUI() {
           }}
           component={"form"}
           onSubmit={handleSubmit}
+          ref={messagesFormRef}
         >
-          <Input
+          <Textarea
             sx={{
               flexGrow: 1,
               backgroundColor: "inherit",
-
               "--Input-focusedThickness": "0.0rem",
             }}
             placeholder="Type in here…"
@@ -131,8 +153,15 @@ export default function ChatUI() {
             variant="outlined"
             value={input}
             onChange={handleInputChange}
+            minRows={3}
+            onKeyDown={handleKeyDown}
           />
-          <IconButton type="submit" aria-label="close chat window" size="lg">
+          <IconButton
+            ref={submitButtonRef}
+            type="submit"
+            aria-label="close chat window"
+            size="lg"
+          >
             <TbSend />
           </IconButton>
         </Box>

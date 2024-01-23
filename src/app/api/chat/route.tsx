@@ -4,7 +4,6 @@ import { experimental_buildOpenAssistantPrompt } from 'ai/prompts';
  
 // Create a new HuggingFace Inference instance
 const Hf = new HfInference(process.env.HUGGINGFACE_API_KEY);
- 
 // IMPORTANT! Set the runtime to edge
 export const runtime = 'edge';
  

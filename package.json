@@ -10,7 +10,6 @@
   "author": "suresh khatri",
   "license": "ISC",
   "dependencies": {
-    "@chatscope/chat-ui-kit-styles": "^1.4.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fontsource/inter": "^5.0.15",

@@ -16,5 +16,5 @@ export async function getExperiences(): Promise<TypeExperience[]> {
   } catch (error) {
     console.error("Error fetching experiences:", error);
     return [];
-  }
+  } 
 }

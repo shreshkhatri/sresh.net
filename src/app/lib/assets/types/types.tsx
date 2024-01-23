@@ -78,9 +78,11 @@ export type TypeLoginPayload = {
   }
 
   export type PropAssistantMessage = {
-    message:string
+    message:string,
+    date:Date|undefined
   }
 
   export type PropUserMessage = {
-    message:string
+    message:string,
+    date:Date|undefined
   }

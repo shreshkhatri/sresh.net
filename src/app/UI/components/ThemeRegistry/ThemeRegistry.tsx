@@ -14,7 +14,9 @@ export default function ThemeRegistry({
   return (
     <NextAppDirEmotionCacheProvider options={{ key: "joy" }}>
       <CssVarsProvider theme={theme}>
-        {getInitColorSchemeScript({ defaultMode: 'system' })}
+
+        
+        {getInitColorSchemeScript({ defaultMode: 'system' })} {/*setting defaultMode as system is necessary for sever side application so that later on when we read mode it does not come as undefined */}
         <CssBaseline />
         {children}
       </CssVarsProvider>
