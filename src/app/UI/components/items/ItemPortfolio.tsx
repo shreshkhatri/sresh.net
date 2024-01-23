@@ -17,9 +17,6 @@ export default function ItemPortfolio({ src, title, description }: PortfolioProp
                 <Link href={src} target="_blank" ><Typography level="title-lg">{title}</Typography></Link>
                 <Typography paddingTop={2} level="body-sm">{description}</Typography>
             </div>
-            <AspectRatio >
-                <iframe src={src} title={title} loading='lazy' style={{ transform: 'scale(0.8)' }}/>
-            </AspectRatio>
         </Card>
     );
 }

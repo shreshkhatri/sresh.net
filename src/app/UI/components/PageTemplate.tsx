@@ -6,6 +6,7 @@ import Footer from "@/app/UI/components/Footer";
 import { cookies } from "next/headers";
 import MainMenuBars from "./MainMenuBars";
 import { PageTemplateProps } from "@/app/lib/assets/types/types";
+import ChatUI from "./ChatUI";
 
 export default function PageTemplate({ pageTemplateProps, children }: { pageTemplateProps: PageTemplateProps, children: ReactNode }) {
   //getting experiences data on server
@@ -20,6 +21,7 @@ export default function PageTemplate({ pageTemplateProps, children }: { pageTemp
       {!essentialCookie && <CookiePolicy />}
       <NetworkStatus />
       <Footer />
+      <ChatUI/>
     </Box>
   );
 }

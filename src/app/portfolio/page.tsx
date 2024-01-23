@@ -27,7 +27,7 @@ export default function Experiences() {
         gap={2}
         justifyContent={"center"}
         flexWrap={"wrap"}
-        sx={{ minHeight: "80vh", p: 3 }}
+        sx={{ p: 3 }}
       >
         {portfolioArray.map((portfolio, index) => {
           return (

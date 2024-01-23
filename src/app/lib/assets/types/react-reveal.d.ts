@@ -20,3 +20,14 @@ declare module 'react-reveal/Fade' {
 
     export default function Zoom(props: FadeProps, children: any): ReactElement;
 }
+
+
+declare module 'react-reveal/Slide' {
+    import { ReactElement } from 'react';
+
+    type SlideProps = {
+        [key: string]: any;
+    }
+
+    export default function Slide(props: SlideProps, children: any): ReactElement;
+}

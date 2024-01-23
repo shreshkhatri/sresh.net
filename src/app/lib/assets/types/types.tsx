@@ -74,5 +74,13 @@ export type TypeLoginPayload = {
 
   export interface PageTemplateProps {
     menus: string[];
-    selectedMenu:string,
+    selectedMenu:string |null,
+  }
+
+  export type PropAssistantMessage = {
+    message:string
+  }
+
+  export type PropUserMessage = {
+    message:string
   }
