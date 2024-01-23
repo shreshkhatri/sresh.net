@@ -1,9 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { Box, Typography, Input, Textarea } from "@mui/joy";
+import { Box, Typography, Textarea } from "@mui/joy";
 import { useChat } from "ai/react";
-import { TbMessage2 } from "react-icons/tb";
-import Badge from "@mui/joy/Badge";
 import { IoMdClose } from "react-icons/io";
 import { TbSend } from "react-icons/tb";
 import { IconButton } from "@mui/joy";
@@ -64,9 +62,9 @@ export default function ChatUI() {
             sm: "70vh",
             md: "70vh",
           },
-          borderRadius: 5,
+          borderRadius: 15,
           zIndex: 2,
-          backgroundColor: mode == "light" ? "white" : "#030D1E",
+          backgroundColor: mode == "light" ? "#F7F7F7" : "#030D1E",
         }}
       >
         <Box
@@ -89,6 +87,12 @@ export default function ChatUI() {
           <IconButton
             aria-label="close chat window"
             size="lg"
+            sx={{
+              borderTopLeftRadius: 0,
+              borderBottomLeftRadius: 0,
+              borderTopRightRadius: 15,
+              borderBottomRightRadius: 0,
+            }}
             onClick={() => setIsMinimized(true)}
           >
             <IoMdClose />
@@ -175,16 +179,14 @@ export default function ChatUI() {
           bottom: 10,
           right: 15,
           cursor: "pointer",
-          zIndex: 5,
+          zIndex: 5
         }}
         onClick={() => setIsMinimized(false)}
       >
-        <Badge badgeInset="15%" color="success">
-          <Typography sx={{ fontSize: "3rem" }}>
-            {" "}
-            <PiChatsCircleLight />
-          </Typography>
-        </Badge>
+        <Typography sx={{ fontSize: "3rem" }}>
+          {" "}
+          <PiChatsCircleLight />
+        </Typography>
       </Box>
     </>
   );

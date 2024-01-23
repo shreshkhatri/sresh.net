@@ -8,18 +8,26 @@ import { PageTemplateProps } from "./lib/assets/types/types";
 import { MENU_ITEMS } from "./lib/assets/data/data";
 
 const pageTemplateProps: PageTemplateProps = {
-  menus:MENU_ITEMS,
-selectedMenu:'home'
+  menus: MENU_ITEMS,
+  selectedMenu: "home",
 };
 
 export default async function Home() {
-  const experiences = await getExperiences();
+  var experiences = await getExperiences();
+
+  //as we cant depend upon the ordering of the record in database, we have to sort it manually here on the basis of descending order of starting date
+  const sortedExperiences = experiences.sort((a, b) => {
+    const dateA = a.startDate ? new Date(a.startDate).getTime() : 0;
+    const dateB = b.startDate ? new Date(b.startDate).getTime() : 0;
+
+    return dateB - dateA;
+  });
 
   return (
     <PageTemplate pageTemplateProps={pageTemplateProps}>
       <Jumbotorn />
       <Introduction />
-      <Experiences experiences={experiences} />
+      <Experiences experiences={sortedExperiences} />
       <Skills />
     </PageTemplate>
   );
