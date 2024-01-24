@@ -28,7 +28,7 @@ export default function Loader() {
         left: 0,
         right: 0,
         bottom: 0,
-        zIndex: 1000,
+        zIndex: 99999999999999,
         backgroundColor: mode == "light" ? "white" : "#030D1E",
       }}
     >

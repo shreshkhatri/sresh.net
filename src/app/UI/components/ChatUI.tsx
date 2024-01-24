@@ -59,7 +59,7 @@ export default function ChatUI() {
             md: "30%",
           },
           height: {
-            xs: "80vh",
+            xs: "100vh",
             sm: "70vh",
             md: "70vh",
           },
