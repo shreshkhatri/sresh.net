@@ -1,23 +1,15 @@
 import { Box, Typography } from "@mui/joy";
 import ItemPortfolio from "@/app/UI/components/items/ItemPortfolio";
 import { portfolioArray } from "@/app/lib/assets/data/portfolio";
-import PageTemplate from "../UI/components/PageTemplate";
 import { Metadata } from "next";
-import { PageTemplateProps } from "../lib/assets/types/types";
-import { MENU_ITEMS } from "../lib/assets/data/data";
 
 export const metadata: Metadata = {
   title: "Portfolio",
 };
 
-const pageTemplateProps: PageTemplateProps = {
-  menus:MENU_ITEMS,
-  selectedMenu:'portfolio'
-};
-
 export default function Experiences() {
   return (
-    <PageTemplate pageTemplateProps={pageTemplateProps}>
+    <>
       <Typography level="h2" textAlign={"center"}>
         Accomplished Projects
       </Typography>
@@ -40,6 +32,6 @@ export default function Experiences() {
           );
         })}
       </Box>
-    </PageTemplate>
+    </>
   );
 }

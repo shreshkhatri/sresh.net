@@ -72,9 +72,14 @@ export type TypeLoginPayload = {
       [key: string]: any;
   }
 
-  export interface PageTemplateProps {
+ 
+  export interface MenusProps{
     menus: string[];
-    selectedMenu:string |null,
+  }
+
+  export interface MenuBarProps extends MenusProps {
+    selectedMenuIndex:number,
+    setSelectedMenuIndex:(index:number) => void
   }
 
   export type PropAssistantMessage = {

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { Box, Typography, Textarea } from "@mui/joy";
+import { Box, Typography, Textarea, Avatar } from "@mui/joy";
 import { useChat } from "ai/react";
 import { IoMdClose } from "react-icons/io";
 import { TbSend } from "react-icons/tb";
@@ -9,6 +9,7 @@ import { PiChatsCircleLight } from "react-icons/pi";
 import ItemAssistantMessage from "./items/ItemAssistantMessage";
 import ItemUserMessage from "./items/ItemUserMessage";
 import { useColorScheme } from "@mui/joy/styles";
+import { FaRegCircleUser } from "react-icons/fa6";
 
 export default function ChatUI() {
   const { mode } = useColorScheme();
@@ -53,7 +54,7 @@ export default function ChatUI() {
           bottom: 10,
           right: 10,
           width: {
-            xs: "90%",
+            xs: "100%",
             sm: "60%",
             md: "30%",
           },
@@ -135,18 +136,24 @@ export default function ChatUI() {
           })}
         </Box>
         <Box
+        id="messageForm"
           sx={{
             width: "100%",
             height: "4rem",
             display: "flex",
             backgroundColor: "inherit",
             padding: 1,
+            alignContent: "center",
           }}
           component={"form"}
           onSubmit={handleSubmit}
           ref={messagesFormRef}
         >
-          <Textarea
+          {" "}
+          <Avatar size="lg">
+            <FaRegCircleUser />
+          </Avatar>
+          <Textarea name="messageForm"
             sx={{
               flexGrow: 1,
               backgroundColor: "inherit",
@@ -179,7 +186,7 @@ export default function ChatUI() {
           bottom: 10,
           right: 15,
           cursor: "pointer",
-          zIndex: 5
+          zIndex: 5,
         }}
         onClick={() => setIsMinimized(false)}
       >

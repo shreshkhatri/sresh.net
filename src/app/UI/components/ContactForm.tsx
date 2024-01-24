@@ -16,7 +16,7 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CountrySelector from "./CountrySelector";
 import ProfileCard from "./ProfileCard";
-import { CountryType,ResponseStatus } from "@/app/lib/assets/types/types";
+import { CountryType, ResponseStatus } from "@/app/lib/assets/types/types";
 import validator from "validator";
 
 export default function ContactForm() {
@@ -104,7 +104,7 @@ export default function ContactForm() {
       >
         <ProfileCard />
 
-        <Box component="form" onSubmit={handleFormSubmit}>
+        <Box id="messageSendForm" component="form" onSubmit={handleFormSubmit}>
           <Card>
             <Typography level="title-md">Contact Form</Typography>
             <Typography level="body-sm">
@@ -131,6 +131,7 @@ export default function ContactForm() {
                     }}
                   >
                     <Input
+                      id="fname"
                       value={fname}
                       size="sm"
                       placeholder="First name"
@@ -139,6 +140,7 @@ export default function ContactForm() {
                       required
                     />
                     <Input
+                      id="lname"
                       value={lname}
                       size="sm"
                       placeholder="Last name"
@@ -153,6 +155,7 @@ export default function ContactForm() {
                 <FormControl sx={{ flexGrow: 1 }}>
                   <FormLabel>Email</FormLabel>
                   <Input
+                    id="email"
                     value={email}
                     size="sm"
                     type="email"
@@ -179,6 +182,7 @@ export default function ContactForm() {
                     }}
                   >
                     <Input
+                      id="subject"
                       value={subject}
                       size="sm"
                       placeholder="Subject"
@@ -187,6 +191,7 @@ export default function ContactForm() {
                       required
                     />
                     <Textarea
+                      id="usermessage"
                       size="sm"
                       minRows={4}
                       sx={{ mt: 1.5 }}
@@ -214,6 +219,7 @@ export default function ContactForm() {
                   Cancel
                 </Button>
                 <Button
+                  id="submit-button"
                   type="submit"
                   size="sm"
                   variant="outlined"

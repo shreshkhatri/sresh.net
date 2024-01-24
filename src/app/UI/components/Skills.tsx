@@ -127,6 +127,9 @@ export default function Skills() {
               <Typography sx={{ ...sx, color: "#F0B93A" }}>
                 <SiTensorflow />
               </Typography>
+              <Typography sx={{ ...sx, color: "#F0B93A" }}>
+              &#129303;
+              </Typography>
               <Typography sx={{ ...sx, color: "#007FFF" }}>
                 <SiMui />
               </Typography>
@@ -199,6 +202,9 @@ export default function Skills() {
               </Typography>
               <Typography sx={{ ...sx, color: "#F0B93A" }}>
                 <SiTensorflow />
+              </Typography>
+              <Typography sx={{ ...sx, color: "#F0B93A" }}>
+              &#129303; 
               </Typography>
             </>
           )}
