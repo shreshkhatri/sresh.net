@@ -29,8 +29,8 @@ export default function ItemAssistantMessage({
           marginRight: "4rem",
         }}
       >
-        <Typography level="body-sm" color="success">
-          {message}
+        <Typography level="body-sm" color="success" sx={{whiteSpace:'break-spaces'}}>
+         {message}
         </Typography>
         <Typography
           level="body-xs"

@@ -10,12 +10,15 @@ import ItemAssistantMessage from "./items/ItemAssistantMessage";
 import ItemUserMessage from "./items/ItemUserMessage";
 import { useColorScheme } from "@mui/joy/styles";
 import { FaRegCircleUser } from "react-icons/fa6";
+import { CgMaximizeAlt } from "react-icons/cg";
+import { TbArrowsMinimize } from "react-icons/tb";
 
 export default function ChatUI() {
   const { mode } = useColorScheme();
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   const [isMinimized, setIsMinimized] = useState<boolean>(true);
+  const [isMaximized, setIsMaximized] = useState<boolean>(false);
 
   const messagesContainerRef = useRef<HTMLDivElement>(null); // the ref is necessary to achive scrolling to the recent messages inside message container
   const messagesFormRef = useRef<HTMLFormElement>(null); // the ref is assigned to the form component which submits user typed message to the API
@@ -54,14 +57,14 @@ export default function ChatUI() {
           bottom: 10,
           right: 10,
           width: {
-            xs: "100%",
-            sm: "60%",
-            md: "30%",
+            xs: "97%",
+            sm: isMaximized ? "98%" : "60%",
+            md: isMaximized ? "99%" : "30%",
           },
           height: {
             xs: "80vh",
-            sm: "70vh",
-            md: "70vh",
+            sm: isMaximized ? "97vh" : "70vh",
+            md: isMaximized ? "97vh" : "70vh",
           },
           borderRadius: 15,
           zIndex: 2,
@@ -85,6 +88,37 @@ export default function ChatUI() {
           >
             Your Assistant
           </Typography>
+
+          {isMaximized ? (
+            <IconButton
+              aria-label="close chat window"
+              size="lg"
+              sx={{
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0,
+                borderTopRightRadius: 15,
+                borderBottomRightRadius: 0,
+              }}
+              onClick={() => setIsMaximized(false)}
+            >
+              <TbArrowsMinimize />
+            </IconButton>
+          ) : (
+            <IconButton
+              aria-label="close chat window"
+              size="lg"
+              sx={{
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0,
+                borderTopRightRadius: 15,
+                borderBottomRightRadius: 0,
+              }}
+              onClick={() => setIsMaximized(true)}
+            >
+              <CgMaximizeAlt />
+            </IconButton>
+          )}
+
           <IconButton
             aria-label="close chat window"
             size="lg"
@@ -136,7 +170,7 @@ export default function ChatUI() {
           })}
         </Box>
         <Box
-        id="messageForm"
+          id="messageForm"
           sx={{
             width: "100%",
             height: "4rem",
@@ -153,7 +187,8 @@ export default function ChatUI() {
           <Avatar size="lg">
             <FaRegCircleUser />
           </Avatar>
-          <Textarea name="messageForm"
+          <Textarea
+            name="messageForm"
             sx={{
               flexGrow: 1,
               backgroundColor: "inherit",
