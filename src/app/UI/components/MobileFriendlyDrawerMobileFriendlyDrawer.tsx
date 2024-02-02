@@ -12,6 +12,7 @@ import { Grid } from "@mui/joy";
 import { PATH_TO_ROOT } from "@/app/lib/assets/data/data";
 import ModeToggler from "./ModeToggler";
 import { MenuBarProps } from "@/app/lib/assets/types/types";
+import { CapitalizeWords } from "@/app/lib/assets/utilityFunctions";
 
 export default function MobileFriendlyDrawer({
   menus,
@@ -68,7 +69,7 @@ export default function MobileFriendlyDrawer({
                 <ListItemButton
                   selected={index === selectedMenuIndex ? true : false}
                 >
-                  {menu}
+                  {CapitalizeWords(menu)}
                 </ListItemButton>
               </Link>
             );
