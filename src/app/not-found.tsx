@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
