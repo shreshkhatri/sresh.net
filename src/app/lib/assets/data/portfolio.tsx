@@ -8,5 +8,10 @@ export const portfolioArray = [
       src: "https://hccs.gaasnetwork.org",
       title: "HCCS Conference 2023 (https://hccs.gaasnetwork.org )",
       description: "A Flask application for facilitating  the annual international conference on Human-centred Cognitive Systems (HCCS) is a flagship conference to drive innovation for future industry 5.0 application scenarios. The HCCS calls for original papers and proposals to cover a variety of Human-centred Cognitive Systems stretched across city infrastructures, manufacturing, retail, business, tourism, health, law, and education."
+    },
+    {
+      src: "https://chat-ui-for-ai.vercel.app",
+      title: "Chat GPT like UI",
+      description: "A NextJS application similar to ChatGPT user interface. UI can be added to any chat service using streaming using numerous AI SDKs, e.g. HuggingFace, LangChain and OpenAI models."
     }
 ];
