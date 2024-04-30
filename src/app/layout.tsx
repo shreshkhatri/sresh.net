@@ -15,20 +15,20 @@ export const metadata: Metadata = {
   title: {
     template: "%s | Suresh WebApp",
     default: "Suresh | WebApp",
-    absolute: "Home | Suresh WebApp",
+    absolute: "Home | Suresh Website",
   },
   description:
-    "A personal website for Suresh Khatri. The web application is designed and built using NextJS and involves uses of numerous other open source JavaScript libraries and resources offered by Vercel and AWS.",
+    "A personal website for Suresh Khatri. Suresh Khatri is an application solution architect,  JavaScript Developer, Moodle developer, Python Developer. Suresh holds degree in Bsc Computer Science and MSc Data Science. Suresh works at London South Bank University.",
   generator: "NextJS application",
   applicationName: " Suresh personal website",
   authors: [{ name: "suresh khatri" }],
   creator: "Suresh khatri",
   publisher: "suresh khatri",
   keywords: [
-    "suresh khatri",
+    "suresh khatri Moodle Developer",
     "suresh full stack developer",
-    "JS developer",
-    "suresh personal web",
+    "suresh khatri JS developer",
+    "suresh khatri portfolio website",
   ],
 };
 
