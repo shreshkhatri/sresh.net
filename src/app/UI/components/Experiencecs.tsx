@@ -60,6 +60,8 @@ export default function Experiences({experiences}:TypeExperiences) {
                   indicator={
                     <StepIndicator variant='outlined' sx={{borderStyle:'double',borderWidth: '5px'}} >
                       <Typography level="title-md" >{formatDate(workExperience.startDate)} </Typography>
+                      <Typography level="title-md" > - </Typography>
+                      <Typography level="title-md" >{workExperience.startDate?formatDate(workExperience.startDate):'Present'} </Typography>
                     </StepIndicator>}
 
                 >
