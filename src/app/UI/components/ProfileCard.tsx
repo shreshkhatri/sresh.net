@@ -16,7 +16,9 @@ export default function ProfileCard() {
         >
             <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>
                 <Avatar src="/images/SureshProfilePic.jpeg" sx={{ '--Avatar-size': '10rem',border:'3px solid white' }} />
-                <Typography level="title-lg">Suresh Khatri</Typography>
+                <Typography level="title-lg">Suresh Khatri (BSc , MSc)</Typography>
+                <Typography level="body-md">Also, MD at HOQUE Consultancy Nepal Pvt Ltd</Typography>
+                <hr></hr>
                 <Typography level="body-sm" >You could write me on the following email addresses</Typography>
                 <Typography level="body-sm" fontWeight={'bold'}>
                     shresh.khatri@gmail.com

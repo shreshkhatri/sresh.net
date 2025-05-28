@@ -12,7 +12,7 @@ export interface CountryType {
   suggested?: boolean;
 }
 
-
+// MobileFriendlyDrawerProps.tsx : the type for specifying opening and closing state of the drawer
 export interface TypeExperience extends WithId<Document> {
   designation: string;
   startDate: string | null;
@@ -25,19 +25,8 @@ export interface TypeExperience extends WithId<Document> {
   achievements: string;
 }
 
-export interface TypeService extends WithId<Document> {
-  title:string;
-  description:string
-}
-
-
 export type TypeExperiences = {
   experiences:TypeExperience[]
-}
-
-
-export type TypeServices = {
-  services:TypeService[]
 }
 
 

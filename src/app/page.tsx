@@ -15,6 +15,8 @@ export default async function Home() {
     return dateB - dateA;
   });
 
+  console.log(experiences);
+
   return (
     <>
       <Jumbotorn />
