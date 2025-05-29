@@ -1,15 +1,13 @@
 import { Box } from "@mui/joy";
 import { Typography } from "@mui/joy";
 import { Metadata } from "next";
-//import { getServices } from "../lib/assets/helperFunctions/dataloaders";
-import Services from "../UI/components/Services";
 import React from "react";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import Stack from "@mui/joy/Stack";
 import Divider from "@mui/joy/Divider";
 import Link from "next/link";
-import { services } from "../lib/assets/data/Services";
+import { services } from "../lib/assets/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
