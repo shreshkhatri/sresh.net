@@ -14,7 +14,7 @@ export default function ProfileCard() {
                 boxShadow: 'lg',
             }}
         >
-            <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>
+            <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}> 
                 <Avatar src="/images/SureshProfilePic.jpeg" sx={{ '--Avatar-size': '10rem',border:'3px solid white' }} />
                 <Typography level="title-lg">Suresh Khatri (BSc , MSc)</Typography>
                 <Typography level="body-md">Also, MD at HOQUE Consultancy Nepal Pvt Ltd</Typography>
@@ -31,6 +31,7 @@ export default function ProfileCard() {
                     spacing={3}
                     sx={{ display: { md: 'flex' }, my: 1 }}
                 >
+                    <SocialIcon url="https://wa.me/+447361503779" network='whatsapp'/>
                     <SocialIcon url="https://www.linkedin.com/in/shreshkc" target='_blank' />
                     <SocialIcon url="https://www.facebook.com/shresh.kc" target='_blank' />
                     <SocialIcon url="https://github.com/shreshkhatri" target='_blank' />
