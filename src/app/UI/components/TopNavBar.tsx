@@ -4,12 +4,16 @@ import Box from "@mui/joy/Box";
 import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
 import ListItemButton from "@mui/joy/ListItemButton";
+import ListItemDecorator from "@mui/joy/ListItemDecorator";
 import Link from "next/link";
-import { MenuBarProps } from "@/app/lib/assets/types/types";
 import { PATH_TO_ROOT } from "@/app/lib/assets/data/data";
 import ModeToggler from "./ModeToggler";
 import { CapitalizeWords } from "@/app/lib/assets/utilityFunctions";
-
+import {
+  MenusProps,
+  typeSelectedMenuIndex,
+  setSelectedMenuIndex,
+} from "@/app/lib/assets/types/types";
 type Options = {
   initialActiveIndex: null | number;
   vertical: boolean;
@@ -88,7 +92,11 @@ export default function TopNavBar({
   menus,
   selectedMenuIndex,
   setSelectedMenuIndex,
-}: MenuBarProps) {
+}: {
+  menus: MenusProps[];
+  selectedMenuIndex: number;
+  setSelectedMenuIndex: setSelectedMenuIndex;
+}) {
   const { targets, getTargetProps, setActiveIndex, focusNext, focusPrevious } =
     useRovingIndex();
 
@@ -120,9 +128,9 @@ export default function TopNavBar({
               <Link
                 style={{ textDecoration: "none" }}
                 href={
-                  PATH_TO_ROOT.includes(menu.toLocaleLowerCase())
+                  PATH_TO_ROOT.includes(menu.text.toLocaleLowerCase())
                     ? "/"
-                    : `/${menu.toLocaleLowerCase()}`
+                    : `/${menu.text.toLocaleLowerCase()}`
                 }
                 onClick={() => setSelectedMenuIndex(index)}
               >
@@ -132,7 +140,8 @@ export default function TopNavBar({
                   sx={{ fontWeight: "bold" }}
                   selected={index === selectedMenuIndex ? true : false}
                 >
-                  {CapitalizeWords(menu)}
+                  <ListItemDecorator>{menu.icon}</ListItemDecorator>
+                  {CapitalizeWords(menu.text)}
                 </ListItemButton>
               </Link>
             </ListItem>

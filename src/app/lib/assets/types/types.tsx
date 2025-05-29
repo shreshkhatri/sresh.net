@@ -66,21 +66,22 @@ export type TypeLoginPayload = {
   password:string
 }
 
-
-
   export type ImgsViewerProps = {
       [key: string]: any;
   }
 
  
   export interface MenusProps{
-    menus: string[];
+    text: string;
+    icon: JSX.Element
+  }
+  
+  export interface typeSelectedMenuIndex {
+    selectedMenuIndex:number;
   }
 
-  export interface MenuBarProps extends MenusProps {
-    selectedMenuIndex:number,
-    setSelectedMenuIndex:(index:number) => void
-  }
+  export type setSelectedMenuIndex = (index: number) => void;
+
 
   export type PropAssistantMessage = {
     message:string,

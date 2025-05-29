@@ -8,17 +8,21 @@ import List from "@mui/joy/List";
 import ListItemButton from "@mui/joy/ListItemButton";
 import ModalClose from "@mui/joy/ModalClose";
 import Menu from "@mui/icons-material/Menu";
-import { Grid } from "@mui/joy";
+import { Grid, ListItemDecorator } from "@mui/joy";
 import { PATH_TO_ROOT } from "@/app/lib/assets/data/data";
 import ModeToggler from "./ModeToggler";
-import { MenuBarProps } from "@/app/lib/assets/types/types";
+import { MenusProps, setSelectedMenuIndex } from "@/app/lib/assets/types/types";
 import { CapitalizeWords } from "@/app/lib/assets/utilityFunctions";
 
 export default function MobileFriendlyDrawer({
   menus,
   selectedMenuIndex,
   setSelectedMenuIndex,
-}: MenuBarProps) {
+}: {
+  menus: MenusProps[];
+  selectedMenuIndex: number;
+  setSelectedMenuIndex: setSelectedMenuIndex;
+}) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -60,16 +64,17 @@ export default function MobileFriendlyDrawer({
                 style={{ textDecoration: "none" }}
                 key={index}
                 href={
-                  PATH_TO_ROOT.includes(menu.toLocaleLowerCase())
+                  PATH_TO_ROOT.includes(menu.text.toLocaleLowerCase())
                     ? "/"
-                    : `/${menu.toLocaleLowerCase()}`
+                    : `/${menu.text.toLocaleLowerCase()}`
                 }
                 onClick={() => setSelectedMenuIndex(index)}
               >
                 <ListItemButton
                   selected={index === selectedMenuIndex ? true : false}
                 >
-                  {CapitalizeWords(menu)}
+                  <ListItemDecorator>{menu.icon}</ListItemDecorator>
+                  {CapitalizeWords(menu.text)}
                 </ListItemButton>
               </Link>
             );
