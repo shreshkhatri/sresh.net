@@ -13,21 +13,12 @@ import Footer from "./UI/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-<<<<<<< HEAD
     template: "%s | Suresh Web",
     default: "Suresh | Web",
     absolute: "Home | Suresh - Web ",
   },
   description:
     "Suresh Khatri is an application solution architect,  JavaScript Developer, Moodle developer, Python Developer. Suresh holds degree in Bsc Computer Science and MSc Data Science. Suresh works at London South Bank University.",
-=======
-    template: "%s | Suresh WebApp",
-    default: "Suresh | WebApp",
-    absolute: "Home | Suresh Website",
-  },
-  description:
-    "A personal website for Suresh Khatri. Suresh Khatri is an application solution architect,  JavaScript Developer, Moodle developer, Python Developer. Suresh holds degree in Bsc Computer Science and MSc Data Science. Suresh works at London South Bank University.",
->>>>>>> 9a9c7db54db5f77950c393a55c69e4b81dd895d3
   generator: "NextJS application",
   applicationName: " Suresh personal website",
   authors: [{ name: "suresh khatri" }],

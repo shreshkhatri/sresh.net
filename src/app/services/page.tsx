@@ -13,8 +13,6 @@ export const metadata: Metadata = {
   title: "Services",
 };
 
-
-
 export default async function Page() {
   //const services = await getServices();
 
