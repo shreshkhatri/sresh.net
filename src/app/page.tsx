@@ -15,8 +15,11 @@ export default async function Home() {
     return dateB - dateA;
   });
 
+<<<<<<< HEAD
   console.log(experiences);
 
+=======
+>>>>>>> 9a9c7db54db5f77950c393a55c69e4b81dd895d3
   return (
     <>
       <Jumbotorn />
