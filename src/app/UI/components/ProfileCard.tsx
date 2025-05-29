@@ -8,23 +8,12 @@ import Stack from '@mui/joy/Stack';
 
 export default function ProfileCard() {
     return (
-        <Card
-            sx={{
-                maxWidth: '100%',
-                boxShadow: 'lg',
-            }}
-        >
-<<<<<<< HEAD
+        <Card sx={{ maxWidth: '100%', boxShadow: 'lg'}}>
             <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}> 
                 <Avatar src="/images/SureshProfilePic.jpeg" sx={{ '--Avatar-size': '10rem',border:'3px solid white' }} />
                 <Typography level="title-lg">Suresh Khatri (BSc , MSc)</Typography>
                 <Typography level="body-md">Also, MD at HOQUE Consultancy Nepal Pvt Ltd</Typography>
                 <hr></hr>
-=======
-            <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>
-                <Avatar src="/images/SureshProfilePic.jpeg" sx={{ '--Avatar-size': '10rem',border:'3px solid white' }} />
-                <Typography level="title-lg">Suresh Khatri</Typography>
->>>>>>> 9a9c7db54db5f77950c393a55c69e4b81dd895d3
                 <Typography level="body-sm" >You could write me on the following email addresses</Typography>
                 <Typography level="body-sm" fontWeight={'bold'}>
                     shresh.khatri@gmail.com
@@ -37,10 +26,7 @@ export default function ProfileCard() {
                     spacing={3}
                     sx={{ display: { md: 'flex' }, my: 1 }}
                 >
-<<<<<<< HEAD
                     <SocialIcon url="https://wa.me/+447361503779" network='whatsapp'/>
-=======
->>>>>>> 9a9c7db54db5f77950c393a55c69e4b81dd895d3
                     <SocialIcon url="https://www.linkedin.com/in/shreshkc" target='_blank' />
                     <SocialIcon url="https://www.facebook.com/shresh.kc" target='_blank' />
                     <SocialIcon url="https://github.com/shreshkhatri" target='_blank' />
