@@ -3,6 +3,7 @@ import CollectionsOutlinedIcon from "@mui/icons-material/CollectionsOutlined";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import AssuredWorkloadOutlinedIcon from "@mui/icons-material/AssuredWorkloadOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
+import { MenusProps } from "../types/types";
 
 export const PATH_TO_ROOT = ["home", "index", "default"];
 export const MENU_ITEMS = [

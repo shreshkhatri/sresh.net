@@ -6,7 +6,7 @@ import MobileFriendlyDrawer from "@/app/UI/components/MobileFriendlyDrawerMobile
 import TopNavBar from "@/app/UI/components/TopNavBar";
 import { MenusProps } from "@/app/lib/assets/types/types";
 
-export default function MainMenuBars(menus : MenusProps[]) {
+export default function MainMenuBars({ menus }: { menus: MenusProps[] }) {
   const urlPartArray = usePathname().toLowerCase().split("/");
 
   const menuName: string =
